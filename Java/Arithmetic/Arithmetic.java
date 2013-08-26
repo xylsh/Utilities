@@ -1,12 +1,12 @@
 import java.math.BigDecimal;
 
 public class Arithmetic {
-	
-	//默认除法保留的小数位数
-	private static final int DEFAULT_NUMBER_OF_DOUBLE_DIGITS = 10;
-	private static final int DEFAULT_NUMBER_OF_FLOAT_DIGITS = 5;
     
-	/**
+    //默认除法保留的小数位数
+    private static final int DEFAULT_NUMBER_OF_DOUBLE_DIGITS = 10;
+    private static final int DEFAULT_NUMBER_OF_FLOAT_DIGITS = 5;
+    
+    /**
      * 计算两个Float数相加
      * @param f1 加数1
      * @param f2 加数2
