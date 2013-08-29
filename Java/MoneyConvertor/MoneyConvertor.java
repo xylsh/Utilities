@@ -35,7 +35,7 @@ public class MoneyConvertor{
     	String[] cutedNumber = numberString.split("\\.");     //整数和小数部分 分开 分别进行转换
     	if(cutedNumber.length == 1){                          //如果只有整数部分
     		convertInteger(numberString);
-   		}else{                                                //既有整数部分，又有小数部分
+   		}else{                                        //既有整数部分，又有小数部分
    			//因为convertDecimal()是把转换过后的字符串append()到resultString的,
    			//而resultString先要保存整数部分的大写，所以下面2行不能换顺序
    			convertInteger(cutedNumber[1]);
