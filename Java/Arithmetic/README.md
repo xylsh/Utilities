@@ -5,3 +5,18 @@
 Java中，float和double只能用来做科学计算或者是工程计算，在商业计算中我们要用java.math.BigDecimal。
 
 Arithmetic类封装了使用BigDecimal进行浮点数加减乘除的运算。
+
+## How to use
+
+``` java
+
+    double d1 = 2.4;
+    double d2 = 2.9;
+    double d3 = Arithmetic.add(d1, d2);
+
+```
+
+## Bugs
+
+Please report any bugs feature requests to [the Github issue tracker](https://github.com/xylsh/Utilities/issues)
+
