@@ -19,5 +19,5 @@ Arithmetic类封装了使用BigDecimal进行浮点数加减乘除的运算。
 
 ## Bugs
 
-Please report any bugs feature requests to [the Github issue tracker](https://github.com/xylsh/Utilities/issues)
+Please report any bugs feature requests to [the Github issue tracker](https://github.com/xylsh/Utilities/issues).
 
