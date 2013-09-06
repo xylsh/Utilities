@@ -34,13 +34,13 @@ public class MoneyConvertor{
     	preProcessing();                                      //预处理小写金额numberString
     	String[] cutedNumber = numberString.split("\\.");     //整数和小数部分 分开 分别进行转换
     	if(cutedNumber.length == 1){                          //如果只有整数部分
-    		convertInteger(numberString);
-   		}else{                                        //既有整数部分，又有小数部分
-   			//因为convertDecimal()是把转换过后的字符串append()到resultString的,
-   			//而resultString先要保存整数部分的大写，所以下面2行不能换顺序
-   			convertInteger(cutedNumber[1]);
-   			convertDecimal(cutedNumber[0]);
-   		}
+    	    convertInteger(numberString);
+   	}else{                                                //既有整数部分，又有小数部分
+   	    //因为convertDecimal()是把转换过后的字符串append()到resultString的,
+   	    //而resultString先要保存整数部分的大写，所以下面2行不能换顺序
+            convertInteger(cutedNumber[1]);
+   	    convertDecimal(cutedNumber[0]);
+   	}
     	removeZero(resultString);                             //去掉多余的"零"
     	checkHead(resultString);                              //如果转换过后的金额前几个字符没有意义，则去掉
     	resultString.append("整");
