@@ -17,3 +17,7 @@ MoneyConvertor类能够将小写数字金额转换为中文大写金额。
 
 Please report any bugs feature requests to [the Github issue tracker](https://github.com/xylsh/Utilities/issues).
 
+## TODO
+
+* MoneyConvertor needs more unit-tests.
+
