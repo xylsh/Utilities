@@ -31,7 +31,7 @@ public class MoneyConvertor{
      * @return 转换过后的中文大写金额
      */
     public String convert(){  
-    	pretreat();                                           //预处理小写金额numberString
+    	preProcessing();                                      //预处理小写金额numberString
     	String[] cutedNumber = numberString.split("\\.");     //整数和小数部分 分开 分别进行转换
     	if(cutedNumber.length == 1){                          //如果只有整数部分
     		convertInteger(numberString);
@@ -53,6 +53,25 @@ public class MoneyConvertor{
      * @return 合法返回true,非法返回false
      */
     public boolean isLegal(String numberStr){  
+    	/*
+    	 * 有两种方法验证 数字金额字符串numberString 是否合法：
+    	 *    1.一项一项条件的判断(更容易理解)
+    	 *    2.使用正则表达式匹配(更简洁)
+    	 *    
+    	 * 这里采用第二种方法。
+    	 */
+    	//下面是第二种方法
+    	if( numberStr==null || numberStr.isEmpty()){     //如果numberStr为NULL，则isEmpty()不会执行，所以不会产生NullPointerException
+    		return false;
+    	}
+    	String regex = "\\d{0,12}(\\.|\\.\\d{0,3})?";
+    	if( !numberStr.matches(regex) ){
+    		return false;
+    	}
+    	
+    	return true;
+    	
+    	/*下面是第一种方法
     	//1.不能为空
     	if( numberStr==null || numberStr.isEmpty()){
     		return false;
@@ -86,18 +105,14 @@ public class MoneyConvertor{
         }else if(cutedNumber.length == 2 && (cutedNumber[0].length()>12 || cutedNumber[1].length()>3) ){  
             return false;
         }
-        //5.不能为特殊数字
-        if( numberStr.equals("0.") || numberStr.equals(".0") ){
-        	return false;
-        }
         
-        return true;
+        return true;*/
     }
     
     /**
      * 有些小写金额有些特殊，譬如".5"，处理它们要先把它们变成"0.5",否则后面转换会出错
      */
-    private void pretreat(){
+    private void preProcessing(){
     	if(numberString.charAt(numberString.length()-1) == '.'){
     		numberString += '0'; 
     	}
