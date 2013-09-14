@@ -22,7 +22,7 @@ public class MoneyConvertor {
      *            如果小写金额不合法(即isLegal()返回false),无法转换,则抛出IllegalArgumentException
      */
     public MoneyConvertor(String numberStr) throws IllegalArgumentException {
-        if (!isLegal(numberStr)) {
+        if (!MoneyConvertor.isLegal(numberStr)) {
             throw new IllegalArgumentException("Illegal money number.");
         } else {
             this.numberString = new StringBuffer(numberStr).reverse()
@@ -60,7 +60,7 @@ public class MoneyConvertor {
      *            小写金额
      * @return 合法返回true,非法返回false
      */
-    public boolean isLegal(String numberStr) {
+    public static boolean isLegal(String numberStr) {
         /*
          * 有两种方法验证 数字金额字符串numberString 是否合法:
          *     1.一项一项条件的判断(更容易理解) 
